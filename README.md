@@ -10,6 +10,9 @@ Built for the Datastraw AI + Tech Intern assessment. Demo month: **December 2026
 with a realistic sample company — **32 employees, 4 pods, 23 brands (19 solo,
 4 multi-resource), 50 brand-processes**.
 
+**Live demo:** https://rosteriq-zeta.vercel.app
+**Repository:** https://github.com/maneshdev-cloud/rosteriq
+
 ## Run it
 
 ```bash
