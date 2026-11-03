@@ -77,7 +77,7 @@ export default function CellEditor({
   };
 
   return (
-    <div className="mt-4 rounded-xl border border-teal-200 bg-teal-50/50 p-4">
+    <div className="mt-4 rounded-2xl border border-teal-200 bg-teal-50/50 p-5 shadow-sm">
       <div className="flex items-center gap-2">
         <h3 className="font-semibold text-slate-900">
           Edit cell — {emp.name}, {fmtDate(selected.date)}

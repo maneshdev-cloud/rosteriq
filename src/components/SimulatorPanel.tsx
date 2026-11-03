@@ -66,7 +66,7 @@ export default function SimulatorPanel({
 
   return (
     <div>
-      <h2 className="font-semibold text-slate-900">Impact Simulator</h2>
+      <h2 className="text-xl font-extrabold tracking-tight text-slate-900">Impact Simulator</h2>
       <p className="mt-1 max-w-3xl text-sm text-slate-500">
         Simulate an absence before approving it. The original roster is never mutated by a
         simulation. Every recommended repair is checked twice: the candidate must be eligible
@@ -74,7 +74,7 @@ export default function SimulatorPanel({
         (second-order check). Each repair changes exactly one thing.
       </p>
 
-      <div className="mt-4 flex flex-wrap items-end gap-3 rounded-xl border border-slate-200 bg-white p-4">
+      <div className="mt-4 flex flex-wrap items-end gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <label className="text-sm">
           <span className="mb-1 block text-slate-500">Employee</span>
           <select value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} className="rounded-md border border-slate-300 px-2 py-1.5">
@@ -121,7 +121,7 @@ export default function SimulatorPanel({
             );
             const candidates = recommendRepairs(input, { days: sim.days, coverage: sim.coverage }, gap);
             return (
-              <div key={`${key}-${gi}`} className="rounded-xl border border-red-200 bg-red-50/50 p-4">
+              <div key={`${key}-${gi}`} className="rounded-2xl border border-red-200 bg-red-50/50 p-5 shadow-sm">
                 <p className="text-sm font-medium text-red-900">{gap.message}</p>
                 {cause && (
                   <p className="mt-1 text-sm text-slate-600">
@@ -193,9 +193,9 @@ export default function SimulatorPanel({
 
 function CompareCard({ title, value, bad }: { title: string; value: string; bad: boolean }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4">
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">{title}</div>
-      <div className={`mt-1 text-2xl font-bold ${bad ? "text-red-600" : "text-slate-800"}`}>{value}</div>
+      <div className={`mt-1 text-3xl font-extrabold tracking-tight ${bad ? "text-red-600" : "text-slate-800"}`}>{value}</div>
     </div>
   );
 }

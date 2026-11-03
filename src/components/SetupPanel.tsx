@@ -37,12 +37,12 @@ export default function SetupPanel({
 
   const selectCls = "rounded-md border border-slate-300 px-2 py-1.5 text-sm";
   const btnCls = "rounded-md bg-slate-800 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-700";
-  const cardCls = "rounded-xl border border-slate-200 bg-white p-4";
+  const cardCls = "rounded-2xl border border-slate-200 bg-white p-5 shadow-sm";
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       <div className={cardCls}>
-        <h3 className="font-semibold">Employees ({input.employees.length})</h3>
+        <h3 className="text-[15px] font-bold text-slate-900">Employees ({input.employees.length})</h3>
         <ul className="mt-2 max-h-56 space-y-1 overflow-y-auto text-sm">
           {input.employees.map((e) => (
             <li key={e.id} className="flex items-center gap-2">
@@ -91,7 +91,7 @@ export default function SetupPanel({
       </div>
 
       <div className={cardCls}>
-        <h3 className="font-semibold">Brands ({input.brands.length}) &amp; processes ({input.brandProcesses.length})</h3>
+        <h3 className="text-[15px] font-bold text-slate-900">Brands ({input.brands.length}) &amp; processes ({input.brandProcesses.length})</h3>
         <ul className="mt-2 max-h-56 space-y-1 overflow-y-auto text-sm">
           {input.brandProcesses.map((bp) => (
             <li key={bp.id} className="flex items-center gap-2">
@@ -162,7 +162,7 @@ export default function SetupPanel({
       </div>
 
       <div className={cardCls}>
-        <h3 className="font-semibold">Assignments ({input.assignments.length})</h3>
+        <h3 className="text-[15px] font-bold text-slate-900">Assignments ({input.assignments.length})</h3>
         <p className="text-xs text-slate-500">
           Assignments define who covers what, with a role and a contribution %. Adding an assignment
           also grants eligibility. The generator may only use configured assignments.
@@ -216,7 +216,7 @@ export default function SetupPanel({
 
       <div className="space-y-4">
         <div className={cardCls}>
-          <h3 className="font-semibold">Public holidays ({input.holidays.length})</h3>
+          <h3 className="text-[15px] font-bold text-slate-900">Public holidays ({input.holidays.length})</h3>
           <ul className="mt-2 space-y-1 text-sm">
             {input.holidays.map((h) => (
               <li key={h.date} className="flex items-center gap-2">
@@ -237,7 +237,7 @@ export default function SetupPanel({
         </div>
 
         <div className={cardCls}>
-          <h3 className="font-semibold">Leaves &amp; comp-offs ({input.leaves.length})</h3>
+          <h3 className="text-[15px] font-bold text-slate-900">Leaves &amp; comp-offs ({input.leaves.length})</h3>
           <ul className="mt-2 space-y-1 text-sm">
             {input.leaves.map((l, i) => (
               <li key={i} className="flex items-center gap-2">

@@ -52,27 +52,27 @@ export default function IssuesPanel({
 
   return (
     <div>
-      <div className="flex items-center gap-2">
-        <h2 className="font-semibold text-slate-900">Coverage Risk Centre</h2>
-        <div className="ml-auto flex overflow-hidden rounded-lg border border-slate-300">
+      <div className="flex flex-wrap items-center gap-2">
+        <h2 className="text-xl font-extrabold tracking-tight text-slate-900">Coverage Risk Centre</h2>
+        <div className="ml-auto flex gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
           {(["all", "mandatory", "preference"] as const).map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-3 py-1.5 text-sm capitalize ${filter === f ? "bg-slate-800 text-white" : "bg-white text-slate-600"}`}
+              className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold capitalize ${filter === f ? "bg-slate-900 text-white shadow-sm" : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"}`}
             >
               {f}
             </button>
           ))}
         </div>
       </div>
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-slate-500">
         Claim types are kept distinct on purpose: a <b>gap</b> means this roster leaves demand
         uncovered (not that coverage is impossible); only the audit can claim a{" "}
         <b>structural</b> shortage, and only with capacity maths.
       </p>
       {shown.length === 0 && (
-        <p className="mt-4 rounded-lg bg-emerald-50 p-4 text-sm text-emerald-800">
+        <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-[15px] text-emerald-800 shadow-sm">
           No {filter === "all" ? "" : filter} issues. The roster passes the independent validator
           on every checked rule.
         </p>
@@ -83,10 +83,10 @@ export default function IssuesPanel({
           return (
             <li
               key={key}
-              className={`rounded-xl border p-4 ${
+              className={`rounded-2xl border border-l-4 p-5 shadow-sm ${
                 issue.severity === "mandatory"
-                  ? "border-red-200 bg-red-50/60"
-                  : "border-slate-200 bg-white"
+                  ? "border-red-200 border-l-red-500 bg-red-50/60"
+                  : "border-slate-200 border-l-slate-300 bg-white"
               }`}
             >
               <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -111,9 +111,9 @@ export default function IssuesPanel({
                   {busy === key ? "Asking AI…" : "AI explain"}
                 </button>
               </div>
-              <p className="mt-2 text-sm text-slate-800">{issue.message}</p>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-slate-800">{issue.message}</p>
               {aiText[key] && (
-                <p className="mt-2 rounded-lg bg-white/70 p-2 text-sm text-slate-600 ring-1 ring-slate-200">
+                <p className="mt-2.5 rounded-lg bg-white/70 p-3 text-[15px] leading-relaxed text-slate-600 ring-1 ring-slate-200">
                   <span className="font-semibold">AI rephrase:</span> {aiText[key]}
                 </p>
               )}

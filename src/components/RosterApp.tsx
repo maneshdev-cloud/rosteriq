@@ -149,15 +149,26 @@ export default function RosterApp() {
   return (
     <main className="mx-auto max-w-[1440px] p-4 sm:p-6">
       {/* Header */}
-      <header className="flex flex-wrap items-center gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900">
-            RosterIQ <span className="text-sm font-medium text-slate-500">Coverage Risk &amp; Repair Engine</span>
-          </h1>
-          <p className="text-sm text-slate-500">
-            December 2026 · {input.employees.length} employees · {input.brands.length} brands ·{" "}
-            {input.pods.length} pods
-          </p>
+      <header className="flex flex-wrap items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+        <div className="flex items-center gap-3.5">
+          <div
+            aria-hidden
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-lg font-extrabold tracking-tight text-white shadow-sm"
+          >
+            RQ
+          </div>
+          <div>
+            <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-slate-900">
+              RosterIQ{" "}
+              <span className="text-[13px] font-semibold uppercase tracking-wider text-teal-700">
+                Coverage Risk &amp; Repair Engine
+              </span>
+            </h1>
+            <p className="mt-0.5 text-[13px] font-medium text-slate-500">
+              December 2026 · {input.employees.length} employees · {input.brands.length} brands ·{" "}
+              {input.pods.length} pods
+            </p>
+          </div>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <span
@@ -176,7 +187,7 @@ export default function RosterApp() {
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as Role)}
-            className="rounded-md border border-slate-300 px-2 py-1 text-sm"
+            className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-medium text-slate-700 shadow-sm"
             title="Authorization demo: viewers cannot edit or publish"
           >
             <option value="manager">Manager</option>
@@ -184,20 +195,20 @@ export default function RosterApp() {
           </select>
           <button
             onClick={() => input && regenerate(input, previousContext)}
-            className="rounded-md bg-slate-800 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-700"
+            className="rounded-lg bg-slate-800 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-700"
           >
             Regenerate roster
           </button>
           <button
             onClick={downloadCSV}
-            className="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            className="rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
           >
             Export CSV
           </button>
           <button
             onClick={publish}
             disabled={!canPublish || role !== "manager"}
-            className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white enabled:hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-slate-300"
+            className="rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm enabled:hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-slate-300"
             title={
               metrics.mandatoryIssues > 0
                 ? `Publishing is blocked: ${metrics.mandatoryIssues} mandatory issue(s) must be resolved first.`
@@ -212,8 +223,8 @@ export default function RosterApp() {
       </header>
 
       {metrics.mandatoryIssues > 0 && (
-        <div className="mt-3 rounded-md border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">
-          Publishing is blocked: {metrics.mandatoryIssues} mandatory issue(s) are open.{" "}
+        <div className="mt-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-[15px] leading-relaxed text-red-900 shadow-sm">
+          <strong>Publishing is blocked:</strong> {metrics.mandatoryIssues} mandatory issue(s) are open.{" "}
           <button className="font-semibold underline" onClick={() => setTab("issues")}>
             Review them in the Risk Centre
           </button>
@@ -221,33 +232,46 @@ export default function RosterApp() {
         </div>
       )}
       {notice && (
-        <div className="mt-3 rounded-md border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-800">
+        <div className="mt-4 rounded-xl border border-sky-300 bg-sky-50 px-4 py-3 text-[15px] leading-relaxed text-sky-900 shadow-sm">
           {notice}
         </div>
       )}
-      <p className="mt-2 text-xs text-slate-400">{dataNote}</p>
+      <p className="mt-3 text-[13px] font-medium text-slate-500">{dataNote}</p>
 
       {/* Tabs */}
-      <nav className="mt-4 flex gap-1 border-b border-slate-200">
+      <nav className="mt-5 flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1.5 shadow-sm">
         {(
           [
             ["dashboard", "Dashboard"],
             ["roster", "Roster"],
             ["setup", "Setup"],
-            ["issues", `Risk Centre (${metrics.mandatoryIssues + metrics.preferenceIssues})`],
+            ["issues", "Risk Centre"],
             ["simulator", "Simulator"],
           ] as [Tab, string][]
         ).map(([t, label]) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`px-4 py-2 text-sm font-medium ${
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-[15px] font-semibold transition-colors ${
               tab === t
-                ? "border-b-2 border-teal-600 text-teal-700"
-                : "text-slate-500 hover:text-slate-800"
+                ? "bg-slate-900 text-white shadow-sm"
+                : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
             }`}
           >
             {label}
+            {t === "issues" && (
+              <span
+                className={`rounded-full px-2 py-0.5 text-xs font-bold ${
+                  metrics.mandatoryIssues > 0
+                    ? "bg-red-600 text-white"
+                    : tab === t
+                      ? "bg-slate-700 text-slate-100"
+                      : "bg-slate-200 text-slate-600"
+                }`}
+              >
+                {metrics.mandatoryIssues + metrics.preferenceIssues}
+              </span>
+            )}
           </button>
         ))}
       </nav>
@@ -262,27 +286,27 @@ export default function RosterApp() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h2 className="font-semibold text-slate-900">Structural risk audit (before generation)</h2>
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 className="text-[17px] font-bold text-slate-900">Structural risk audit (before generation)</h2>
               {audit.length === 0 ? (
-                <p className="mt-2 text-sm text-emerald-700">
+                <p className="mt-2 text-[15px] leading-relaxed text-emerald-700">
                   No proven structural shortages in the current configuration. Every brand-process
                   has enough assigned staff-days per week — this does not guarantee a feasible
                   roster, it rules out provable impossibility.
                 </p>
               ) : (
-                <ul className="mt-2 space-y-2 text-sm text-red-700">
+                <ul className="mt-2 space-y-2 text-[15px] leading-relaxed text-red-700">
                   {audit.map((f) => (
                     <li key={f.brandProcessId} className="rounded bg-red-50 p-2">{f.message}</li>
                   ))}
                 </ul>
               )}
-              <h3 className="mt-5 font-semibold text-slate-900">Next 7 days — gaps per day</h3>
-              <div className="mt-2 flex gap-2">
+              <h3 className="mt-6 text-[15px] font-bold text-slate-900">Next 7 days — gaps per day</h3>
+              <div className="mt-2.5 flex gap-2">
                 {dates.slice(0, 7).map((d) => (
                   <div
                     key={d}
-                    className={`flex-1 rounded-lg p-2 text-center text-xs ${
+                    className={`flex-1 rounded-lg px-2 py-2.5 text-center text-[13px] ${
                       (shortfallsByDay.get(d) ?? 0) > 0
                         ? "bg-red-100 text-red-800"
                         : "bg-emerald-50 text-emerald-800"
@@ -295,9 +319,9 @@ export default function RosterApp() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h2 className="font-semibold text-slate-900">Pods</h2>
-              <table className="mt-2 w-full text-sm">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 className="text-[17px] font-bold text-slate-900">Pods</h2>
+              <table className="mt-3 w-full text-[15px]">
                 <thead>
                   <tr className="text-left text-slate-500">
                     <th className="py-1">Pod</th><th>Employees</th><th>Brands</th><th>Lead</th>
@@ -314,8 +338,8 @@ export default function RosterApp() {
                   ))}
                 </tbody>
               </table>
-              <h3 className="mt-5 font-semibold text-slate-900">Approved leave &amp; comp-offs in December</h3>
-              <ul className="mt-2 space-y-1 text-sm text-slate-600">
+              <h3 className="mt-6 text-[15px] font-bold text-slate-900">Approved leave &amp; comp-offs in December</h3>
+              <ul className="mt-2 space-y-1.5 text-[15px] leading-relaxed text-slate-600">
                 {input.leaves.map((l, idx) => (
                   <li key={idx}>
                     {input.employees.find((e) => e.id === l.employeeId)?.name} —{" "}
@@ -414,17 +438,23 @@ function MetricCard({
   sub: string;
   tone: "good" | "bad" | "neutral";
 }) {
+  const accent =
+    tone === "good"
+      ? "border-l-emerald-500"
+      : tone === "bad"
+        ? "border-l-red-500"
+        : "border-l-slate-300";
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5">
-      <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">{label}</div>
+    <div className={`rounded-2xl border border-slate-200 border-l-4 ${accent} bg-white p-5 shadow-sm`}>
+      <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-slate-400">{label}</div>
       <div
-        className={`mt-1 text-3xl font-bold ${
+        className={`mt-1.5 text-4xl font-extrabold tracking-tight ${
           tone === "good" ? "text-emerald-600" : tone === "bad" ? "text-red-600" : "text-slate-800"
         }`}
       >
         {value}
       </div>
-      <div className="mt-1 text-xs text-slate-500">{sub}</div>
+      <div className="mt-1.5 text-[13px] leading-snug text-slate-500">{sub}</div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import type {
   SchedulingInput,
   ValidationIssue,
 } from "../lib/types";
-import { datesOfMonth } from "../lib/engine/calendar";
+import { datesOfMonth, weekday } from "../lib/engine/calendar";
 import { requiredStaff } from "../lib/engine/demand";
 
 export interface SelectedCell {
@@ -22,13 +22,15 @@ export interface SelectedCell {
 type View = "company" | "pod" | "brand" | "process" | "employee";
 
 const STATUS_STYLE: Record<RosterDay["status"], { label: string; cls: string }> = {
-  WORK: { label: "W", cls: "bg-teal-50 text-teal-900" },
-  WEEKLY_OFF: { label: "OFF", cls: "bg-slate-100 text-slate-500" },
-  LEAVE: { label: "LV", cls: "bg-amber-100 text-amber-800" },
-  HOLIDAY_OFF: { label: "HO", cls: "bg-sky-50 text-sky-700" },
-  COMP_OFF: { label: "CO", cls: "bg-violet-100 text-violet-800" },
-  CLOSED: { label: "–", cls: "bg-white text-slate-300" },
+  WORK: { label: "W", cls: "bg-teal-100 text-teal-900" },
+  WEEKLY_OFF: { label: "OFF", cls: "bg-slate-200/80 text-slate-600" },
+  LEAVE: { label: "LV", cls: "bg-amber-200/80 text-amber-900" },
+  HOLIDAY_OFF: { label: "HO", cls: "bg-sky-100 text-sky-900" },
+  COMP_OFF: { label: "CO", cls: "bg-violet-200/70 text-violet-900" },
+  CLOSED: { label: "–", cls: "bg-transparent text-slate-300" },
 };
+
+const WEEKDAY_SHORT = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
 interface Cell {
   date: string;
@@ -158,7 +160,7 @@ export default function RosterGrid({
         return {
           date,
           text: cov.map((c) => initials(input.employees.find((e) => e.id === c.employeeId)?.name ?? "")).join(" "),
-          cls: gap ? "bg-red-100 text-red-800 font-semibold" : "bg-teal-50 text-teal-900",
+          cls: gap ? "bg-red-200/80 text-red-900 font-bold" : "bg-teal-100 text-teal-900",
           title: gap
             ? `GAP: required ${req}, actual ${cov.length}`
             : cov.map((c) => input.employees.find((e) => e.id === c.employeeId)?.name).join(", "),
@@ -188,54 +190,57 @@ export default function RosterGrid({
 
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex overflow-hidden rounded-lg border border-slate-300">
+      <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
           {(["company", "pod", "brand", "process", "employee"] as View[]).map((v) => (
             <button
               key={v}
               onClick={() => setView(v)}
-              className={`px-3 py-1.5 text-sm capitalize ${view === v ? "bg-slate-800 text-white" : "bg-white text-slate-600 hover:bg-slate-50"}`}
+              className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold capitalize ${view === v ? "bg-slate-900 text-white shadow-sm" : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"}`}
             >
               {v}
             </button>
           ))}
         </div>
         {view === "pod" && (
-          <select value={podId} onChange={(e) => setPodId(e.target.value)} className="rounded-md border border-slate-300 px-2 py-1.5 text-sm">
+          <select value={podId} onChange={(e) => setPodId(e.target.value)} className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-medium text-slate-700 shadow-sm">
             {input.pods.map((p) => (
               <option key={p.id} value={p.id}>{p.name}</option>
             ))}
           </select>
         )}
         {view === "process" && (
-          <select value={processCode} onChange={(e) => setProcessCode(e.target.value)} className="rounded-md border border-slate-300 px-2 py-1.5 text-sm">
+          <select value={processCode} onChange={(e) => setProcessCode(e.target.value)} className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-medium text-slate-700 shadow-sm">
             {input.processes.map((p) => (
               <option key={p.code} value={p.code}>{p.code} — {p.name}</option>
             ))}
           </select>
         )}
         {view === "employee" && (
-          <select value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} className="rounded-md border border-slate-300 px-2 py-1.5 text-sm">
+          <select value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-medium text-slate-700 shadow-sm">
             {input.employees.map((e) => (
               <option key={e.id} value={e.id}>{e.name}</option>
             ))}
           </select>
         )}
-        <span className="ml-auto text-xs text-slate-400">
+        <span className="ml-auto text-[13px] font-medium text-slate-500">
           Click a cell to edit it (Manager mode). Red outline = this employee is an assignee of a gap that day.
         </span>
       </div>
 
-      <div className="mt-3 overflow-x-auto rounded-xl border border-slate-200 bg-white">
+      <div className="mt-3 overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
         <table className="border-collapse text-xs">
           <thead>
-            <tr>
-              <th className="sticky left-0 z-10 min-w-44 bg-slate-50 px-3 py-2 text-left font-semibold text-slate-600">
+            <tr className="bg-slate-900">
+              <th className="sticky left-0 top-0 z-20 min-w-52 bg-slate-900 px-4 py-2.5 text-left text-[13px] font-bold text-white shadow-[1px_0_0_rgba(255,255,255,0.15)]">
                 {view === "brand" || view === "process" ? "Brand · Process" : "Employee"}
               </th>
               {dates.map((d) => (
-                <th key={d} className="min-w-11 px-1 py-2 text-center font-medium text-slate-500">
-                  {d.slice(8)}
+                <th key={d} className="sticky top-0 z-10 min-w-14 bg-slate-900 px-1 py-2 text-center">
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                    {WEEKDAY_SHORT[weekday(d)]}
+                  </div>
+                  <div className="text-sm font-bold leading-tight text-white">{d.slice(8)}</div>
                 </th>
               ))}
             </tr>
@@ -248,15 +253,15 @@ export default function RosterGrid({
                 <Fragment key={row.id}>
                   {groupHeader && (
                     <tr key={`g-${groupHeader}`}>
-                      <td colSpan={dates.length + 1} className="bg-slate-100 px-3 py-1 font-semibold text-slate-600">
+                      <td colSpan={dates.length + 1} className="bg-slate-800 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-white">
                         {groupHeader}
                       </td>
                     </tr>
                   )}
-                  <tr className="border-t border-slate-100">
-                    <td className="sticky left-0 z-10 bg-white px-3 py-1.5">
-                      <div className="font-medium text-slate-800">{row.label}</div>
-                      <div className="text-[10px] text-slate-400">{row.sub}</div>
+                  <tr className="border-t border-slate-100 transition-colors hover:bg-slate-50">
+                    <td className="sticky left-0 z-10 bg-white px-4 py-2 shadow-[1px_0_0_#e2e8f0]">
+                      <div className="text-sm font-semibold leading-snug text-slate-800">{row.label}</div>
+                      <div className="text-[11px] font-medium capitalize text-slate-400">{row.sub}</div>
                     </td>
                     {row.cells.map((cell) => (
                       <td key={cell.date} className="px-0.5 py-1">
@@ -265,9 +270,9 @@ export default function RosterGrid({
                           onClick={() =>
                             cell.employeeId && onSelectCell?.({ employeeId: cell.employeeId, date: cell.date })
                           }
-                          className={`w-full rounded px-1 py-1 text-center text-[10px] ${cell.cls} ${
-                            cell.gap ? "outline-2 outline-red-400" : ""
-                          } ${cell.employeeId && onSelectCell ? "cursor-pointer hover:ring-2 hover:ring-teal-300" : "cursor-default"}`}
+                          className={`flex min-h-8 w-full items-center justify-center rounded-md px-1 text-center text-[11px] font-semibold ${cell.cls} ${
+                            cell.gap ? "outline-2 outline-red-500" : ""
+                          } ${cell.employeeId && onSelectCell ? "cursor-pointer hover:ring-2 hover:ring-teal-400" : "cursor-default"}`}
                         >
                           {cell.text || "—"}
                         </button>
@@ -280,14 +285,14 @@ export default function RosterGrid({
           </tbody>
         </table>
       </div>
-      <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-slate-500">
-        <span><b>W / CS+ACC</b> working (processes covered)</span>
-        <span><b>OFF</b> weekly off</span>
-        <span><b>LV</b> leave</span>
-        <span><b>HO</b> holiday off</span>
-        <span><b>CO</b> comp-off</span>
-        <span><b>–</b> closed / standby</span>
-        <span className="text-red-600"><b>red</b> coverage gap</span>
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-medium text-slate-600">
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-teal-500" /><b>W / CS+ACC</b> working</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-slate-300" /><b>OFF</b> weekly off</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-amber-400" /><b>LV</b> leave</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-sky-400" /><b>HO</b> holiday off</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-violet-400" /><b>CO</b> comp-off</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-slate-200" /><b>–</b> closed / standby</span>
+        <span className="flex items-center gap-1.5 text-red-700"><span className="h-2.5 w-2.5 rounded-sm bg-red-500" /><b>red</b> coverage gap</span>
       </div>
     </div>
   );
