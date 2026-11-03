@@ -56,12 +56,39 @@ export function validateRoster(
   for (const d of days) dayStatus.set(`${d.employeeId}|${d.date}`, d.status);
   const statusOf = (emp: string, date: string) => dayStatus.get(`${emp}|${date}`);
 
+  const eligibilitySet = new Set(
+    input.eligibility.map((e) => `${e.employeeId}|${e.brandProcessId}`),
+  );
+
   // ---- M2 / M4: every coverage row must itself be legitimate --------------
+  // Duplicate rows (same employee, date, brand-process) are flagged once and
+  // excluded from every count: the same work recorded twice must never
+  // inflate headcount or capacity.
   const validCoverage: RosterCoverage[] = [];
+  const uniqueCoverage: RosterCoverage[] = [];
+  const seenRows = new Set<string>();
   for (const row of coverage) {
     const bp = bpById.get(row.brandProcessId);
     const emp = empById.get(row.employeeId);
     if (!bp || !emp) continue;
+    const rowKey = `${row.employeeId}|${row.date}|${row.brandProcessId}`;
+    if (seenRows.has(rowKey)) {
+      issues.push({
+        code: "DUPLICATE_COVERAGE",
+        severity: "mandatory",
+        claimKind: "validation",
+        date: row.date,
+        brandId: bp.brandId,
+        processCode: bp.processCode,
+        employeeId: row.employeeId,
+        message:
+          `${fmtDate(row.date)}, ${brandById.get(bp.brandId)?.name}, ${processByCode.get(bp.processCode)?.name}: ` +
+          `duplicate coverage row for ${emp.name}. The same work recorded twice never counts twice; the duplicate is ignored.`,
+      });
+      continue;
+    }
+    seenRows.add(rowKey);
+    uniqueCoverage.push(row);
     const status = statusOf(row.employeeId, row.date);
     let ok = true;
     if (status !== "WORK") {
@@ -82,7 +109,7 @@ export function validateRoster(
       });
     }
     const assignment = assignmentByKey.get(`${row.employeeId}|${row.brandProcessId}`);
-    if (!assignment) {
+    if (!assignment || !eligibilitySet.has(`${row.employeeId}|${row.brandProcessId}`)) {
       ok = false;
       issues.push({
         code: "NOT_ASSIGNED",
@@ -115,9 +142,9 @@ export function validateRoster(
     if (ok) validCoverage.push(row);
   }
 
-  // ---- M5: daily allocation cap -------------------------------------------
+  // ---- M5: daily allocation cap (over unique rows only) -------------------
   const allocByEmpDate = new Map<string, number>();
-  for (const row of coverage) {
+  for (const row of uniqueCoverage) {
     const k = `${row.employeeId}|${row.date}`;
     allocByEmpDate.set(k, (allocByEmpDate.get(k) ?? 0) + row.allocationPct);
   }
@@ -214,7 +241,16 @@ export function validateRoster(
     for (const week of weeks) {
       const statuses = week.map((d) => statusOf(emp.id, d));
       const missing = statuses.filter((s) => s === undefined).length;
-      const hasRest = statuses.some((s) => s !== undefined && s !== "WORK");
+      // Rest means an actual off status. Approved LEAVE deliberately does
+      // NOT count: the locked rule is that leave never replaces the weekly
+      // off (see the NO_WEEKLY_REST message below).
+      const REST_STATUSES: RosterDay["status"][] = [
+        "WEEKLY_OFF",
+        "HOLIDAY_OFF",
+        "COMP_OFF",
+        "CLOSED",
+      ];
+      const hasRest = statuses.some((s) => s !== undefined && REST_STATUSES.includes(s));
       if (hasRest) continue;
       if (missing > 0) {
         if (!boundaryReported.has(emp.id)) {

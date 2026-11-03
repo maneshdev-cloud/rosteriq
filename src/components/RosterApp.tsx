@@ -78,7 +78,6 @@ export default function RosterApp() {
       regenerate(loaded.input, loaded.previousContext);
       setLoading(false);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const issues = useMemo(

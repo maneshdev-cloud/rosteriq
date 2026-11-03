@@ -9,15 +9,27 @@
 //   returned unchanged with mode "template".
 // The application is fully functional without this route.
 
+// Consistent error shape for this API: { error: { code, message } }.
+// Success/fallback shape is { text, mode } — mode "template" means the
+// deterministic explanation was returned unchanged (no AI involved).
+const MAX_TEXT_CHARS = 4000; // one issue explanation, generously bounded
+
+function apiError(status: number, code: string, message: string) {
+  return Response.json({ error: { code, message } }, { status });
+}
+
 export async function POST(req: Request) {
   let text = "";
   try {
     const body = await req.json();
     text = typeof body?.text === "string" ? body.text : "";
   } catch {
-    return Response.json({ error: "Invalid JSON body" }, { status: 400 });
+    return apiError(400, "INVALID_JSON", "Request body must be valid JSON.");
   }
-  if (!text) return Response.json({ error: "Missing text" }, { status: 400 });
+  if (!text) return apiError(400, "MISSING_TEXT", "Field 'text' is required.");
+  if (text.length > MAX_TEXT_CHARS) {
+    return apiError(413, "TEXT_TOO_LARGE", `Field 'text' must be at most ${MAX_TEXT_CHARS} characters.`);
+  }
 
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return Response.json({ text, mode: "template" });

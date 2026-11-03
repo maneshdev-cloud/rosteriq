@@ -18,7 +18,7 @@ with a realistic sample company — **32 employees, 4 pods, 23 brands (19 solo,
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm test           # Vitest engine suite (17 tests)
+npm test           # Vitest suites (28 tests: engine + validator)
 npm run build      # production build
 ```
 
@@ -217,6 +217,10 @@ supabase/migrations/        001 schema · 002 row-level security
 scripts/build-seed.mjs      canonical dataset generator (single source of names)
 fixtures/                   structural-risk + unfixable-case scenarios
 tests/engine.test.ts        17 tests over every engine claim above
+tests/validator.test.ts     11 tests: deliberately invalid rosters the
+                            validator must catch + determinism
+docs/IMPLEMENTATION_AUDIT.md  independent audit: status per area, defects
+                            found and fixed, what is blocked and why
 docs/APPROACH.md            approach note · docs/INTERVIEW_GUIDE.md ·
 docs/VIDEO_SCRIPT.md
 ```

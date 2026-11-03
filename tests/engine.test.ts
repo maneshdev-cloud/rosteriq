@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 import seedJson from "../src/lib/data/seed.json";
 import structuralFixture from "../fixtures/structural-risk-pureglow.json";
 import stressFixture from "../fixtures/stress-ecoliving-2026-12-14.json";
-import type { SchedulingInput } from "../src/lib/types";
+import type { PeriodContext, SchedulingInput } from "../src/lib/types";
 import { isOperatingDay, weekday } from "../src/lib/engine/calendar";
 import { requiredStaff } from "../src/lib/engine/demand";
 import { auditFeasibility } from "../src/lib/engine/audit";
@@ -22,7 +22,8 @@ const seed = seedJson as unknown as SchedulingInput & {
   previousContext: SchedulingInput extends never ? never : { days: never[] };
 };
 const input = seed as unknown as SchedulingInput;
-const previousContext = (seedJson as any).previousContext;
+const previousContext = (seedJson as unknown as { previousContext: PeriodContext })
+  .previousContext;
 const MONTH = "2026-12";
 const OPTS = {
   seed: 42,

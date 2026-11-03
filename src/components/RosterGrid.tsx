@@ -186,7 +186,6 @@ export default function RosterGrid({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, podId, processCode, employeeId, input, days, coverage, issues]);
 
-  let lastGroup: string | undefined;
   return (
     <div>
       <div className="flex flex-wrap items-center gap-2">
@@ -242,10 +241,9 @@ export default function RosterGrid({
             </tr>
           </thead>
           <tbody>
-            {rows.map((row) => {
+            {rows.map((row, i) => {
               const groupHeader =
-                view === "company" && row.group !== lastGroup ? row.group : undefined;
-              if (view === "company") lastGroup = row.group;
+                view === "company" && row.group !== rows[i - 1]?.group ? row.group : undefined;
               return (
                 <Fragment key={row.id}>
                   {groupHeader && (

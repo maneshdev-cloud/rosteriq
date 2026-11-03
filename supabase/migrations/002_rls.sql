@@ -36,8 +36,13 @@ create policy "public read" on roster_days for select using (true);
 create policy "public read" on roster_coverage for select using (true);
 create policy "public read" on issues for select using (true);
 
--- Write: authenticated managers only. Applied per-table; shown once here as
--- the pattern and repeated for every table in the applied migration set.
+-- Write: authenticated managers only, on the eight tables below (employees,
+-- brands, brand_processes, assignments, leaves, rosters, roster_days,
+-- roster_coverage). The remaining tables (pods, processes, coverage_rules,
+-- employee_eligibility, holidays, issues) have NO write policy: under RLS
+-- that means API writes to them are denied for everyone, which is the
+-- intended posture — reference data changes ship as migrations, and issues
+-- are written only by the backend that owns validation.
 create policy "manager write" on employees
   for all
   using (auth.role() = 'authenticated' and (auth.jwt() -> 'app_metadata' ->> 'role') = 'manager')

@@ -6,7 +6,7 @@
 // Scenario comparison is metrics-before vs metrics-after vs
 // metrics-after-repair, always on the same denominator.
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type {
   Leave,
   RosterCoverage,
