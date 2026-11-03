@@ -65,8 +65,14 @@ export function analyzeRootCause(
   const backups = assigned.filter((a) => a.role === "backup");
   const statusOf = new Map(state.days.map((d) => [key(d.employeeId, d.date), d.status]));
   const name = (id: string) => input.employees.find((e) => e.id === id)?.name ?? id;
-  const primaryOnLeave = primaries.filter((a) => isOnLeave(input.leaves, a.employeeId, date));
-  const backupOnLeave = backups.filter((a) => isOnLeave(input.leaves, a.employeeId, date));
+  // "On leave" means approved leave in the data OR a leave status in the
+  // state being analysed (a simulated absence only exists in the state).
+  const onLeave = (empId: string) =>
+    isOnLeave(input.leaves, empId, date) ||
+    statusOf.get(key(empId, date)) === "LEAVE" ||
+    statusOf.get(key(empId, date)) === "COMP_OFF";
+  const primaryOnLeave = primaries.filter((a) => onLeave(a.employeeId));
+  const backupOnLeave = backups.filter((a) => onLeave(a.employeeId));
 
   if (primaries.length === 1 && primaryOnLeave.length === 1 && backupOnLeave.length > 0) {
     return {
