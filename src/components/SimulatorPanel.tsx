@@ -47,16 +47,28 @@ export default function SimulatorPanel({
   const [simIssues, setSimIssues] = useState<ValidationIssue[]>([]);
   const [appliedRepairs, setAppliedRepairs] = useState(0);
 
-  const run = () => {
+  const runWith = (empId: string, s: string, e: string) => {
     const result = simulateChange(
       input,
       { days, coverage },
-      { employeeId, startDate: start, endDate: end },
+      { employeeId: empId, startDate: s, endDate: e },
       valOpts,
     );
     setSim(result);
     setSimIssues(result.issues);
     setAppliedRepairs(0);
+  };
+
+  const run = () => runWith(employeeId, start, end);
+
+  /** One-click guided demo: the only person who runs EcoLiving takes a day
+   *  off. Shows a real gap, its root cause, and a repair that is safe to
+   *  apply — the fastest way to understand what this page does. */
+  const runDemo = () => {
+    setEmployeeId("geeta-rao");
+    setStart("2026-12-15");
+    setEnd("2026-12-15");
+    runWith("geeta-rao", "2026-12-15", "2026-12-15");
   };
 
   const simMetrics = sim
@@ -67,14 +79,29 @@ export default function SimulatorPanel({
   return (
     <div>
       <h2 className="text-xl font-extrabold tracking-tight text-slate-900">Impact Simulator</h2>
-      <p className="mt-1 max-w-3xl text-sm text-slate-500">
-        Simulate an absence before approving it. The original roster is never mutated by a
-        simulation. Every recommended repair is checked twice: the candidate must be eligible
-        and available, and adding their cover must not break their own obligations
-        (second-order check). Each repair changes exactly one thing.
+      <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-slate-500">
+        Someone wants a day off? Test it here <b>before</b> approving. This page shows exactly
+        which brands would break, why, and who can safely cover — the real roster is never
+        changed by a simulation. Every suggested cover person is checked twice: they must be
+        eligible and free, and covering must not break their own duties.
       </p>
 
-      <div className="mt-4 flex flex-wrap items-end gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="mt-4 flex flex-wrap items-center gap-3 rounded-2xl bg-teal-700 px-5 py-4 shadow-sm">
+        <p className="max-w-2xl text-[15px] leading-relaxed text-teal-50">
+          <strong className="font-bold text-white">First time here?</strong> Run the guided
+          demo: <b>Geeta Rao</b> is the only person who runs the EcoLiving brand. Give her
+          15 Dec off and watch what breaks — and how a safe repair is found.
+        </p>
+        <button
+          onClick={runDemo}
+          className="ml-auto shrink-0 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-teal-800 shadow hover:bg-teal-50"
+        >
+          ▶ Run the demo scenario
+        </button>
+      </div>
+
+      <p className="mb-2 mt-5 text-sm font-semibold text-slate-700">Or build your own scenario:</p>
+      <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <label className="text-sm">
           <span className="mb-1 block text-slate-500">Employee</span>
           <select value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} className="rounded-md border border-slate-300 px-2 py-1.5">
@@ -94,9 +121,10 @@ export default function SimulatorPanel({
         <button onClick={run} className="rounded-md bg-slate-800 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700">
           Run simulation
         </button>
-        <span className="text-xs text-slate-400">
-          Try: Geeta Rao (EcoLiving) on 15 Dec — repairable. Then 14 Dec with Rashmi Iyer also
-          away (add her leave in Setup first) — that one is not.
+        <span className="max-w-md text-[13px] leading-snug text-slate-400">
+          Harder test: Geeta Rao on <b>14 Dec</b> — but first add Rashmi Iyer&apos;s leave for
+          14 Dec in Setup. That absence cannot be covered, and the system will say so honestly
+          instead of inventing cover.
         </span>
       </div>
 

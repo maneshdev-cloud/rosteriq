@@ -46,6 +46,7 @@ export default function RosterApp() {
   const [version, setVersion] = useState(1);
   const [status, setStatus] = useState<"DRAFT" | "VALIDATED" | "PUBLISHED">("DRAFT");
   const [tab, setTab] = useState<Tab>("dashboard");
+  const [showGuide, setShowGuide] = useState(true);
   const [role, setRole] = useState<Role>("manager");
   const [selected, setSelected] = useState<SelectedCell | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
@@ -132,7 +133,9 @@ export default function RosterApp() {
   if (loading || !input || !metrics) {
     return (
       <main className="mx-auto max-w-7xl p-8">
-        <p className="text-slate-600">Loading RosterIQ…</p>
+        <p className="animate-pulse text-[15px] font-medium text-slate-600">
+          Loading RosterIQ — building the December 2026 roster for the sample company…
+        </p>
       </main>
     );
   }
@@ -274,10 +277,104 @@ export default function RosterApp() {
             )}
           </button>
         ))}
+        {/* Context help: wherever the reviewer is, this strip says in one
+            line what the page is and what to do on it. No guessing. */}
+        <div className="ml-auto hidden items-center gap-2.5 self-center rounded-lg bg-teal-50 py-2 pl-2.5 pr-4 lg:flex">
+          <span
+            aria-hidden
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 text-[13px] font-extrabold text-white"
+          >
+            ?
+          </span>
+          <p className="text-[13px] font-medium leading-snug text-teal-900">
+            {
+              {
+                dashboard:
+                  "The month's score — is every brand covered? Follow the 2-minute guide below.",
+                roster:
+                  "Who works which day. Click any cell to change a person's day — rules re-check instantly.",
+                setup:
+                  "The company's data — people, brands, leaves. Change anything; the roster rebuilds itself.",
+                issues:
+                  "Every problem in plain English: what is uncovered, why, and whether it blocks publishing.",
+                simulator:
+                  "Test a day off before approving it. The real roster never changes on this page.",
+              }[tab]
+            }
+          </p>
+        </div>
       </nav>
 
       {tab === "dashboard" && (
         <section className="mt-6 space-y-6">
+          {showGuide && (
+            <div className="rounded-2xl bg-slate-900 px-6 py-5 shadow-sm">
+              <div className="flex flex-wrap items-start gap-3">
+                <div>
+                  <h2 className="text-lg font-extrabold tracking-tight text-white">
+                    New here? Start here — it takes two minutes.
+                  </h2>
+                  <p className="mt-1 max-w-3xl text-[15px] leading-relaxed text-slate-300">
+                    RosterIQ builds the <b className="text-white">December 2026 duty roster</b> for
+                    a sample company — 32 employees looking after 23 client brands — and{" "}
+                    <b className="text-white">proves every brand is covered, every day</b>. If
+                    coverage is ever impossible, it says so honestly instead of hiding the gap.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowGuide(false)}
+                  className="ml-auto shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-300 ring-1 ring-slate-600 hover:bg-slate-800 hover:text-white"
+                >
+                  Hide guide
+                </button>
+              </div>
+              <ol className="mt-4 grid gap-3 md:grid-cols-3">
+                <li className="rounded-xl bg-slate-800/80 p-4">
+                  <p className="text-sm font-bold text-teal-300">Step 1 — See the roster</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-300">
+                    Who works which day, for which brand. Click any cell to change a
+                    person&apos;s day — every rule is re-checked instantly.
+                  </p>
+                  <button
+                    onClick={() => setTab("roster")}
+                    className="mt-2.5 rounded-lg bg-teal-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-500"
+                  >
+                    Open the roster →
+                  </button>
+                </li>
+                <li className="rounded-xl bg-slate-800/80 p-4">
+                  <p className="text-sm font-bold text-teal-300">Step 2 — Break it safely</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-300">
+                    In the Simulator, give the only EcoLiving employee a day off and watch
+                    the system find safe cover — or honestly report that none exists.
+                  </p>
+                  <button
+                    onClick={() => setTab("simulator")}
+                    className="mt-2.5 rounded-lg bg-teal-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-500"
+                  >
+                    Try the Simulator →
+                  </button>
+                </li>
+                <li className="rounded-xl bg-slate-800/80 p-4">
+                  <p className="text-sm font-bold text-teal-300">Step 3 — Check the risks</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-300">
+                    The Risk Centre lists every problem in plain English — what is
+                    uncovered, why, and what it would take to fix it.
+                  </p>
+                  <button
+                    onClick={() => setTab("issues")}
+                    className="mt-2.5 rounded-lg bg-teal-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-500"
+                  >
+                    Open the Risk Centre →
+                  </button>
+                </li>
+              </ol>
+              <p className="mt-3 text-[13px] text-slate-400">
+                The four cards below are the month&apos;s score: coverage, uncovered positions,
+                and the issues that would block publishing this roster.
+              </p>
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             <MetricCard label="Coverage" value={`${metrics.coveragePct}%`} sub={`${metrics.fullyCoveredUnits} of ${metrics.requiredUnits} required units fully covered`} tone={metrics.coveragePct === 100 ? "good" : "bad"} />
             <MetricCard label="Uncovered positions" value={String(metrics.uncoveredPositions)} sub="Sum of staffing shortfalls — never hidden" tone={metrics.uncoveredPositions === 0 ? "good" : "bad"} />
@@ -356,6 +453,16 @@ export default function RosterApp() {
 
       {tab === "roster" && (
         <section className="mt-6">
+          <h2 className="text-xl font-extrabold tracking-tight text-slate-900">
+            Monthly roster — December 2026
+          </h2>
+          <p className="mb-4 mt-2 max-w-4xl text-[15px] leading-relaxed text-slate-500">
+            Each <b>row is one employee</b>, each <b>column is one day</b>. The letters show
+            what that person covers that day — <b>CS</b> Customer Support, <b>ACC</b>{" "}
+            Abandoned Cart Conversions, <b>NDR</b> Non-Delivery Report Management, <b>RET</b>{" "}
+            Customer Retention. Use the views above the grid to group the same roster by pod,
+            brand, or process. <b>Click any cell</b> to change that person&apos;s day.
+          </p>
           <RosterGrid
             input={input}
             days={days}
@@ -388,6 +495,13 @@ export default function RosterApp() {
 
       {tab === "setup" && (
         <section className="mt-6">
+          <h2 className="text-xl font-extrabold tracking-tight text-slate-900">Company setup</h2>
+          <p className="mb-4 mt-2 max-w-4xl text-[15px] leading-relaxed text-slate-500">
+            This is the company&apos;s data: the people, the brands, who is allowed to cover
+            what, plus holidays and approved leaves. <b>Change anything here and the roster is
+            rebuilt and re-checked automatically</b> — no code, no spreadsheets. Try adding a
+            leave for Geeta Rao and watch the roster react.
+          </p>
           {role === "manager" ? (
             <SetupPanel input={input} onChange={onSetupChange} />
           ) : (

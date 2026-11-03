@@ -224,7 +224,7 @@ export default function RosterGrid({
           </select>
         )}
         <span className="ml-auto text-[13px] font-medium text-slate-500">
-          Click a cell to edit it (Manager mode). Red outline = this employee is an assignee of a gap that day.
+          Red outline = this person is responsible for a coverage gap that day.
         </span>
       </div>
 

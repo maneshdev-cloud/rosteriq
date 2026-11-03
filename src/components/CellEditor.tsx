@@ -18,6 +18,16 @@ import type { SelectedCell } from "./RosterGrid";
 
 const STATUSES: DayStatus[] = ["WORK", "WEEKLY_OFF", "LEAVE", "COMP_OFF", "HOLIDAY_OFF", "CLOSED"];
 
+/** Human labels — nobody should have to decode raw status codes. */
+const STATUS_LABELS: Record<DayStatus, string> = {
+  WORK: "Working",
+  WEEKLY_OFF: "Weekly off",
+  LEAVE: "Leave",
+  COMP_OFF: "Comp-off",
+  HOLIDAY_OFF: "Holiday off",
+  CLOSED: "Closed (brand shut)",
+};
+
 export default function CellEditor({
   input,
   days,
@@ -79,24 +89,29 @@ export default function CellEditor({
   return (
     <div className="mt-4 rounded-2xl border border-teal-200 bg-teal-50/50 p-5 shadow-sm">
       <div className="flex items-center gap-2">
-        <h3 className="font-semibold text-slate-900">
+        <h3 className="text-[15px] font-bold text-slate-900">
           Edit cell — {emp.name}, {fmtDate(selected.date)}
         </h3>
-        <button onClick={onClose} className="ml-auto text-sm text-slate-500 hover:text-slate-800">
+        <button onClick={onClose} className="ml-auto text-sm font-medium text-slate-500 hover:text-slate-800">
           Close
         </button>
       </div>
+      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+        Change this person&apos;s day below, then press <b>Apply &amp; revalidate</b>. Every
+        rule is re-checked instantly — if your change breaks coverage anywhere, it appears in
+        the Risk Centre immediately. Nothing is silently accepted.
+      </p>
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="text-sm text-slate-600">Day status:</span>
+        <span className="text-sm font-medium text-slate-600">This person is:</span>
         {STATUSES.map((s) => (
           <button
             key={s}
             onClick={() => setStatus(s)}
-            className={`rounded-md px-2.5 py-1 text-xs font-medium ${
-              status === s ? "bg-slate-800 text-white" : "bg-white text-slate-600 ring-1 ring-slate-300"
+            className={`rounded-lg px-3 py-1.5 text-[13px] font-semibold ${
+              status === s ? "bg-slate-800 text-white" : "bg-white text-slate-600 ring-1 ring-slate-300 hover:bg-slate-50"
             }`}
           >
-            {s}
+            {STATUS_LABELS[s]}
           </button>
         ))}
       </div>
