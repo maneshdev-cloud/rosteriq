@@ -463,6 +463,25 @@ export default function RosterApp() {
             Customer Retention. Use the views above the grid to group the same roster by pod,
             brand, or process. <b>Click any cell</b> to change that person&apos;s day.
           </p>
+          {/* Editor lives HERE by default — directly under the heading, in
+              full view the moment a cell is clicked, never buried below
+              32 rows of grid. */}
+          {selected && (
+            <div className="mb-4">
+              <CellEditor
+                input={input}
+                days={days}
+                coverage={coverage}
+                selected={selected}
+                onClose={() => setSelected(null)}
+                onApply={(nextDays, nextCoverage) => {
+                  touch();
+                  setDays(nextDays);
+                  setCoverage(nextCoverage);
+                }}
+              />
+            </div>
+          )}
           <RosterGrid
             input={input}
             days={days}
@@ -471,20 +490,6 @@ export default function RosterApp() {
             month={MONTH}
             onSelectCell={role === "manager" ? setSelected : undefined}
           />
-          {selected && (
-            <CellEditor
-              input={input}
-              days={days}
-              coverage={coverage}
-              selected={selected}
-              onClose={() => setSelected(null)}
-              onApply={(nextDays, nextCoverage) => {
-                touch();
-                setDays(nextDays);
-                setCoverage(nextCoverage);
-              }}
-            />
-          )}
           {role !== "manager" && (
             <p className="mt-2 text-xs text-slate-400">
               You are in Viewer mode — editing is disabled. Switch to Manager to edit cells.

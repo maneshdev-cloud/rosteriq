@@ -118,27 +118,41 @@ export default function CellEditor({
       {status === "WORK" && (
         <div className="mt-3">
           <span className="text-sm text-slate-600">
-            Processes covered this day (only configured assignments can be selected; allocation % is the configured contribution):
+            Jobs this person covers today — tick or untick, then Apply. The % is how much of
+            their day each job takes. (Only jobs assigned to them in Setup can appear here.)
           </span>
-          <div className="mt-1 flex flex-wrap gap-2">
-            {myAssignments.map((a) => (
-              <label
-                key={a.brandProcessId}
-                className="flex cursor-pointer items-center gap-1.5 rounded-md bg-white px-2.5 py-1 text-xs ring-1 ring-slate-300"
-              >
-                <input
-                  type="checkbox"
-                  checked={checked.has(a.brandProcessId)}
-                  onChange={(e) => {
-                    const next = new Set(checked);
-                    if (e.target.checked) next.add(a.brandProcessId);
-                    else next.delete(a.brandProcessId);
-                    setChecked(next);
-                  }}
-                />
-                {a.brandProcessId} · {a.role} · {a.allocationPct}%
-              </label>
-            ))}
+          <div className="mt-1.5 flex flex-wrap gap-2">
+            {myAssignments.map((a) => {
+              const bp = input.brandProcesses.find((b) => b.id === a.brandProcessId);
+              const brandName = bp
+                ? (input.brands.find((b) => b.id === bp.brandId)?.name ?? bp.brandId)
+                : a.brandProcessId;
+              const procName = bp
+                ? (input.processes.find((p) => p.code === bp.processCode)?.name ?? bp.processCode)
+                : "";
+              const roleLabel =
+                { primary: "main cover", shared: "shared cover", backup: "backup cover" }[
+                  a.role
+                ] ?? a.role;
+              return (
+                <label
+                  key={a.brandProcessId}
+                  className="flex cursor-pointer items-center gap-1.5 rounded-lg bg-white px-3 py-1.5 text-[13px] font-medium text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50"
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked.has(a.brandProcessId)}
+                    onChange={(e) => {
+                      const next = new Set(checked);
+                      if (e.target.checked) next.add(a.brandProcessId);
+                      else next.delete(a.brandProcessId);
+                      setChecked(next);
+                    }}
+                  />
+                  {brandName} — {procName} · {roleLabel} · {a.allocationPct}% of their day
+                </label>
+              );
+            })}
             {myAssignments.length === 0 && (
               <span className="text-xs text-slate-400">This employee has no assignments.</span>
             )}
