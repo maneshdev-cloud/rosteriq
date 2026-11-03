@@ -1,0 +1,30 @@
+{
+  "name": "structural-risk-pureglow",
+  "description": "Remove Ishaan Verma's PureGlow backup designation. Audit must prove a structural shortage before any roster is generated.",
+  "removeAssignments": [
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:ACC"
+    }
+  ],
+  "removeEligibility": [
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:ACC"
+    }
+  ],
+  "expectedAuditFinding": {
+    "brandProcessId": "pureglow:CS",
+    "requiredStaffDaysPerWeek": 7,
+    "maxSupplyStaffDaysPerWeek": 6,
+    "claimKind": "structural"
+  }
+}

@@ -1,0 +1,3356 @@
+{
+  "meta": {
+    "product": "RosterIQ",
+    "demoMonth": "2026-12",
+    "generatedBy": "scripts/build-seed.mjs — edit the blueprint there, never seed.json by hand",
+    "counts": {
+      "employees": 32,
+      "brands": 23,
+      "soloBrands": 19,
+      "multiBrands": 4,
+      "pods": 4
+    }
+  },
+  "pods": [
+    {
+      "id": "pod-a",
+      "name": "Beauty & Wellness",
+      "leadEmployeeId": "aarav-mehta"
+    },
+    {
+      "id": "pod-b",
+      "name": "Fashion & Lifestyle",
+      "leadEmployeeId": "meera-joshi"
+    },
+    {
+      "id": "pod-c",
+      "name": "Health & Fitness",
+      "leadEmployeeId": "aditya-rao"
+    },
+    {
+      "id": "pod-d",
+      "name": "Home & General D2C",
+      "leadEmployeeId": "sanjay-gupta"
+    }
+  ],
+  "employees": [
+    {
+      "id": "aarav-mehta",
+      "name": "Aarav Mehta",
+      "podId": "pod-a",
+      "isPodLead": true,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "priya-nair",
+      "name": "Priya Nair",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "kavya-reddy",
+      "name": "Kavya Reddy",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        3
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "rohan-patil",
+      "name": "Rohan Patil",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "sneha-kulkarni",
+      "name": "Sneha Kulkarni",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "vikram-shah",
+      "name": "Vikram Shah",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        6
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "ananya-iyer",
+      "name": "Ananya Iyer",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "ishaan-verma",
+      "name": "Ishaan Verma (Floater)",
+      "podId": "pod-a",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        2
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "meera-joshi",
+      "name": "Meera Joshi",
+      "podId": "pod-b",
+      "isPodLead": true,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "arjun-malhotra",
+      "name": "Arjun Malhotra",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "divya-pillai",
+      "name": "Divya Pillai",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        4
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "kabir-singh",
+      "name": "Kabir Singh",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "naina-kapoor",
+      "name": "Naina Kapoor",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        6
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "rahul-deshmukh",
+      "name": "Rahul Deshmukh",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "sara-khan",
+      "name": "Sara Khan",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "dev-patel",
+      "name": "Dev Patel (Floater)",
+      "podId": "pod-b",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        3
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "aditya-rao",
+      "name": "Aditya Rao",
+      "podId": "pod-c",
+      "isPodLead": true,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "pooja-menon",
+      "name": "Pooja Menon",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "kiran-bhat",
+      "name": "Kiran Bhat",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        5
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "leela-nambiar",
+      "name": "Leela Nambiar",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "nikhil-verma",
+      "name": "Nikhil Verma",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "riya-sharma",
+      "name": "Riya Sharma",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        6
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "varun-nair",
+      "name": "Varun Nair",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "tara-bhatt",
+      "name": "Tara Bhatt (Floater)",
+      "podId": "pod-c",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        2
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "sanjay-gupta",
+      "name": "Sanjay Gupta",
+      "podId": "pod-d",
+      "isPodLead": true,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "anita-desai",
+      "name": "Anita Desai",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        3
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "manoj-kumar",
+      "name": "Manoj Kumar",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "geeta-rao",
+      "name": "Geeta Rao",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "farhan-sheikh",
+      "name": "Farhan Sheikh",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        6
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "neha-patil",
+      "name": "Neha Patil",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "amit-joshi",
+      "name": "Amit Joshi",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        0
+      ],
+      "maxConsecutiveDays": 6
+    },
+    {
+      "id": "rashmi-iyer",
+      "name": "Rashmi Iyer (Floater)",
+      "podId": "pod-d",
+      "isPodLead": false,
+      "weeklyOffPref": [
+        4
+      ],
+      "maxConsecutiveDays": 6
+    }
+  ],
+  "brands": [
+    {
+      "id": "novaskin",
+      "name": "NovaSkin",
+      "podId": "pod-a"
+    },
+    {
+      "id": "pureglow",
+      "name": "PureGlow",
+      "podId": "pod-a"
+    },
+    {
+      "id": "auracare",
+      "name": "AuraCare",
+      "podId": "pod-a"
+    },
+    {
+      "id": "bloomessentials",
+      "name": "BloomEssentials",
+      "podId": "pod-a"
+    },
+    {
+      "id": "luxebeauty",
+      "name": "LuxeBeauty",
+      "podId": "pod-a"
+    },
+    {
+      "id": "urbanthread",
+      "name": "UrbanThread",
+      "podId": "pod-b"
+    },
+    {
+      "id": "stylenest",
+      "name": "StyleNest",
+      "podId": "pod-b"
+    },
+    {
+      "id": "modecraft",
+      "name": "ModeCraft",
+      "podId": "pod-b"
+    },
+    {
+      "id": "trendlane",
+      "name": "TrendLane",
+      "podId": "pod-b"
+    },
+    {
+      "id": "chickart",
+      "name": "ChicKart",
+      "podId": "pod-b"
+    },
+    {
+      "id": "voguenest",
+      "name": "VogueNest",
+      "podId": "pod-b"
+    },
+    {
+      "id": "luxewear",
+      "name": "LuxeWear",
+      "podId": "pod-b"
+    },
+    {
+      "id": "fitfuel",
+      "name": "FitFuel",
+      "podId": "pod-c"
+    },
+    {
+      "id": "vitacore",
+      "name": "VitaCore",
+      "podId": "pod-c"
+    },
+    {
+      "id": "nutrinest",
+      "name": "NutriNest",
+      "podId": "pod-c"
+    },
+    {
+      "id": "wellspring",
+      "name": "WellSpring",
+      "podId": "pod-c"
+    },
+    {
+      "id": "activelife",
+      "name": "ActiveLife",
+      "podId": "pod-c"
+    },
+    {
+      "id": "casabloom",
+      "name": "CasaBloom",
+      "podId": "pod-d"
+    },
+    {
+      "id": "homeease",
+      "name": "HomeEase",
+      "podId": "pod-d"
+    },
+    {
+      "id": "dailynest",
+      "name": "DailyNest",
+      "podId": "pod-d"
+    },
+    {
+      "id": "ecoliving",
+      "name": "EcoLiving",
+      "podId": "pod-d"
+    },
+    {
+      "id": "kitchenkart",
+      "name": "KitchenKart",
+      "podId": "pod-d"
+    },
+    {
+      "id": "primeliving",
+      "name": "PrimeLiving",
+      "podId": "pod-d"
+    }
+  ],
+  "processes": [
+    {
+      "code": "CS",
+      "name": "Customer Support"
+    },
+    {
+      "code": "ACC",
+      "name": "Abandoned Cart Conversions"
+    },
+    {
+      "code": "NDR",
+      "name": "Non-Delivery Report Management"
+    },
+    {
+      "code": "RET",
+      "name": "Customer Retention"
+    }
+  ],
+  "brandProcesses": [
+    {
+      "id": "novaskin:CS",
+      "brandId": "novaskin",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "novaskin:ACC",
+      "brandId": "novaskin",
+      "processCode": "ACC",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "novaskin:NDR",
+      "brandId": "novaskin",
+      "processCode": "NDR",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "pureglow:CS",
+      "brandId": "pureglow",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "pureglow:ACC",
+      "brandId": "pureglow",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "auracare:CS",
+      "brandId": "auracare",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "auracare:NDR",
+      "brandId": "auracare",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "bloomessentials:CS",
+      "brandId": "bloomessentials",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "bloomessentials:ACC",
+      "brandId": "bloomessentials",
+      "processCode": "ACC",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "luxebeauty:CS",
+      "brandId": "luxebeauty",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "luxebeauty:ACC",
+      "brandId": "luxebeauty",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "luxebeauty:NDR",
+      "brandId": "luxebeauty",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "urbanthread:CS",
+      "brandId": "urbanthread",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "urbanthread:ACC",
+      "brandId": "urbanthread",
+      "processCode": "ACC",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "stylenest:CS",
+      "brandId": "stylenest",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "modecraft:CS",
+      "brandId": "modecraft",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "modecraft:ACC",
+      "brandId": "modecraft",
+      "processCode": "ACC",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "trendlane:CS",
+      "brandId": "trendlane",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "trendlane:NDR",
+      "brandId": "trendlane",
+      "processCode": "NDR",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "chickart:CS",
+      "brandId": "chickart",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "chickart:RET",
+      "brandId": "chickart",
+      "processCode": "RET",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "voguenest:CS",
+      "brandId": "voguenest",
+      "processCode": "CS",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "voguenest:ACC",
+      "brandId": "voguenest",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "luxewear:CS",
+      "brandId": "luxewear",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "luxewear:ACC",
+      "brandId": "luxewear",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "luxewear:NDR",
+      "brandId": "luxewear",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "fitfuel:CS",
+      "brandId": "fitfuel",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "fitfuel:ACC",
+      "brandId": "fitfuel",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "vitacore:CS",
+      "brandId": "vitacore",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "vitacore:NDR",
+      "brandId": "vitacore",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "nutrinest:CS",
+      "brandId": "nutrinest",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "nutrinest:RET",
+      "brandId": "nutrinest",
+      "processCode": "RET",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "wellspring:CS",
+      "brandId": "wellspring",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "wellspring:ACC",
+      "brandId": "wellspring",
+      "processCode": "ACC",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "activelife:CS",
+      "brandId": "activelife",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "activelife:ACC",
+      "brandId": "activelife",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "activelife:NDR",
+      "brandId": "activelife",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "casabloom:CS",
+      "brandId": "casabloom",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "casabloom:ACC",
+      "brandId": "casabloom",
+      "processCode": "ACC",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "homeease:CS",
+      "brandId": "homeease",
+      "processCode": "CS",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "homeease:NDR",
+      "brandId": "homeease",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "dailynest:CS",
+      "brandId": "dailynest",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "dailynest:RET",
+      "brandId": "dailynest",
+      "processCode": "RET",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    },
+    {
+      "id": "ecoliving:CS",
+      "brandId": "ecoliving",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "ecoliving:ACC",
+      "brandId": "ecoliving",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "kitchenkart:CS",
+      "brandId": "kitchenkart",
+      "processCode": "CS",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "kitchenkart:ACC",
+      "brandId": "kitchenkart",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "primeliving:CS",
+      "brandId": "primeliving",
+      "processCode": "CS",
+      "calendarType": "ALL_365"
+    },
+    {
+      "id": "primeliving:ACC",
+      "brandId": "primeliving",
+      "processCode": "ACC",
+      "calendarType": "DAILY_EXCEPT_HOLIDAYS"
+    },
+    {
+      "id": "primeliving:NDR",
+      "brandId": "primeliving",
+      "processCode": "NDR",
+      "calendarType": "SUN_AND_HOLIDAYS_OFF"
+    }
+  ],
+  "coverageRules": [
+    {
+      "brandProcessId": "novaskin:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "novaskin:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "novaskin:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "pureglow:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "pureglow:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "auracare:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "auracare:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "bloomessentials:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "bloomessentials:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "luxebeauty:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20,
+      "overrides": {
+        "2026-12-19": 2
+      }
+    },
+    {
+      "brandProcessId": "luxebeauty:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "luxebeauty:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "urbanthread:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "urbanthread:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "stylenest:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "modecraft:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "modecraft:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "trendlane:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "trendlane:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "chickart:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "chickart:RET",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "voguenest:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "voguenest:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "luxewear:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "luxewear:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "luxewear:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "fitfuel:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "fitfuel:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "vitacore:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "vitacore:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "nutrinest:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "nutrinest:RET",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "wellspring:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "wellspring:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "activelife:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20,
+      "overrides": {
+        "2026-12-12": 2
+      }
+    },
+    {
+      "brandProcessId": "activelife:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "activelife:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "casabloom:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "casabloom:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "homeease:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "homeease:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "dailynest:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "dailynest:RET",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "ecoliving:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "ecoliving:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "kitchenkart:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "kitchenkart:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "primeliving:CS",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "primeliving:ACC",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    },
+    {
+      "brandProcessId": "primeliving:NDR",
+      "minStaff": 1,
+      "minAllocationPct": 20
+    }
+  ],
+  "assignments": [
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:CS",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:ACC",
+      "role": "primary",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:NDR",
+      "role": "primary",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "priya-nair",
+      "brandProcessId": "pureglow:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "priya-nair",
+      "brandProcessId": "pureglow:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "kavya-reddy",
+      "brandProcessId": "auracare:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "kavya-reddy",
+      "brandProcessId": "auracare:NDR",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "rohan-patil",
+      "brandProcessId": "bloomessentials:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "rohan-patil",
+      "brandProcessId": "bloomessentials:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "sneha-kulkarni",
+      "brandProcessId": "luxebeauty:CS",
+      "role": "shared",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "vikram-shah",
+      "brandProcessId": "luxebeauty:ACC",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "ananya-iyer",
+      "brandProcessId": "luxebeauty:NDR",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "ananya-iyer",
+      "brandProcessId": "luxebeauty:CS",
+      "role": "shared",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "sneha-kulkarni",
+      "brandProcessId": "luxebeauty:ACC",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "vikram-shah",
+      "brandProcessId": "luxebeauty:CS",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:ACC",
+      "role": "backup",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:NDR",
+      "role": "backup",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "auracare:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "auracare:NDR",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "bloomessentials:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "bloomessentials:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:ACC",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:NDR",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "urbanthread:CS",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "urbanthread:ACC",
+      "role": "primary",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "stylenest:CS",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "arjun-malhotra",
+      "brandProcessId": "modecraft:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "arjun-malhotra",
+      "brandProcessId": "modecraft:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "divya-pillai",
+      "brandProcessId": "trendlane:CS",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "divya-pillai",
+      "brandProcessId": "trendlane:NDR",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "kabir-singh",
+      "brandProcessId": "chickart:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "kabir-singh",
+      "brandProcessId": "chickart:RET",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "naina-kapoor",
+      "brandProcessId": "voguenest:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "naina-kapoor",
+      "brandProcessId": "voguenest:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "rahul-deshmukh",
+      "brandProcessId": "luxewear:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "rahul-deshmukh",
+      "brandProcessId": "luxewear:ACC",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:CS",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:NDR",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "urbanthread:CS",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "urbanthread:ACC",
+      "role": "backup",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "stylenest:CS",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "modecraft:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "modecraft:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "trendlane:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "trendlane:NDR",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "chickart:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "chickart:RET",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "voguenest:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "voguenest:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:ACC",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:NDR",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "aditya-rao",
+      "brandProcessId": "fitfuel:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "aditya-rao",
+      "brandProcessId": "fitfuel:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "pooja-menon",
+      "brandProcessId": "vitacore:CS",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "pooja-menon",
+      "brandProcessId": "vitacore:NDR",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "kiran-bhat",
+      "brandProcessId": "nutrinest:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "kiran-bhat",
+      "brandProcessId": "nutrinest:RET",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "leela-nambiar",
+      "brandProcessId": "wellspring:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "leela-nambiar",
+      "brandProcessId": "wellspring:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "nikhil-verma",
+      "brandProcessId": "activelife:CS",
+      "role": "shared",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:CS",
+      "role": "shared",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "varun-nair",
+      "brandProcessId": "activelife:NDR",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "nikhil-verma",
+      "brandProcessId": "activelife:ACC",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:NDR",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "fitfuel:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "fitfuel:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "vitacore:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "vitacore:NDR",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "nutrinest:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "nutrinest:RET",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "wellspring:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "wellspring:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:NDR",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "sanjay-gupta",
+      "brandProcessId": "casabloom:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "sanjay-gupta",
+      "brandProcessId": "casabloom:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "anita-desai",
+      "brandProcessId": "homeease:CS",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "anita-desai",
+      "brandProcessId": "homeease:NDR",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "manoj-kumar",
+      "brandProcessId": "dailynest:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "manoj-kumar",
+      "brandProcessId": "dailynest:RET",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "geeta-rao",
+      "brandProcessId": "ecoliving:CS",
+      "role": "primary",
+      "allocationPct": 70
+    },
+    {
+      "employeeId": "geeta-rao",
+      "brandProcessId": "ecoliving:ACC",
+      "role": "primary",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "farhan-sheikh",
+      "brandProcessId": "kitchenkart:CS",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "farhan-sheikh",
+      "brandProcessId": "kitchenkart:ACC",
+      "role": "primary",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:CS",
+      "role": "primary",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:ACC",
+      "role": "primary",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:NDR",
+      "role": "primary",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:CS",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:ACC",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:NDR",
+      "role": "shared",
+      "allocationPct": 20
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "casabloom:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "casabloom:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "homeease:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "homeease:NDR",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "dailynest:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "dailynest:RET",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "ecoliving:CS",
+      "role": "backup",
+      "allocationPct": 70
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "ecoliving:ACC",
+      "role": "backup",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "kitchenkart:CS",
+      "role": "backup",
+      "allocationPct": 60
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "kitchenkart:ACC",
+      "role": "backup",
+      "allocationPct": 40
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:CS",
+      "role": "backup",
+      "allocationPct": 50
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:ACC",
+      "role": "backup",
+      "allocationPct": 30
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:NDR",
+      "role": "backup",
+      "allocationPct": 60
+    }
+  ],
+  "eligibility": [
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:CS"
+    },
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:ACC"
+    },
+    {
+      "employeeId": "aarav-mehta",
+      "brandProcessId": "novaskin:NDR"
+    },
+    {
+      "employeeId": "priya-nair",
+      "brandProcessId": "pureglow:CS"
+    },
+    {
+      "employeeId": "priya-nair",
+      "brandProcessId": "pureglow:ACC"
+    },
+    {
+      "employeeId": "kavya-reddy",
+      "brandProcessId": "auracare:CS"
+    },
+    {
+      "employeeId": "kavya-reddy",
+      "brandProcessId": "auracare:NDR"
+    },
+    {
+      "employeeId": "rohan-patil",
+      "brandProcessId": "bloomessentials:CS"
+    },
+    {
+      "employeeId": "rohan-patil",
+      "brandProcessId": "bloomessentials:ACC"
+    },
+    {
+      "employeeId": "sneha-kulkarni",
+      "brandProcessId": "luxebeauty:CS"
+    },
+    {
+      "employeeId": "vikram-shah",
+      "brandProcessId": "luxebeauty:ACC"
+    },
+    {
+      "employeeId": "ananya-iyer",
+      "brandProcessId": "luxebeauty:NDR"
+    },
+    {
+      "employeeId": "ananya-iyer",
+      "brandProcessId": "luxebeauty:CS"
+    },
+    {
+      "employeeId": "sneha-kulkarni",
+      "brandProcessId": "luxebeauty:ACC"
+    },
+    {
+      "employeeId": "vikram-shah",
+      "brandProcessId": "luxebeauty:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:ACC"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "novaskin:NDR"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "pureglow:ACC"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "auracare:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "auracare:NDR"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "bloomessentials:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "bloomessentials:ACC"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:CS"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:ACC"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "brandProcessId": "luxebeauty:NDR"
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "urbanthread:CS"
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "urbanthread:ACC"
+    },
+    {
+      "employeeId": "meera-joshi",
+      "brandProcessId": "stylenest:CS"
+    },
+    {
+      "employeeId": "arjun-malhotra",
+      "brandProcessId": "modecraft:CS"
+    },
+    {
+      "employeeId": "arjun-malhotra",
+      "brandProcessId": "modecraft:ACC"
+    },
+    {
+      "employeeId": "divya-pillai",
+      "brandProcessId": "trendlane:CS"
+    },
+    {
+      "employeeId": "divya-pillai",
+      "brandProcessId": "trendlane:NDR"
+    },
+    {
+      "employeeId": "kabir-singh",
+      "brandProcessId": "chickart:CS"
+    },
+    {
+      "employeeId": "kabir-singh",
+      "brandProcessId": "chickart:RET"
+    },
+    {
+      "employeeId": "naina-kapoor",
+      "brandProcessId": "voguenest:CS"
+    },
+    {
+      "employeeId": "naina-kapoor",
+      "brandProcessId": "voguenest:ACC"
+    },
+    {
+      "employeeId": "rahul-deshmukh",
+      "brandProcessId": "luxewear:CS"
+    },
+    {
+      "employeeId": "rahul-deshmukh",
+      "brandProcessId": "luxewear:ACC"
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:CS"
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:ACC"
+    },
+    {
+      "employeeId": "sara-khan",
+      "brandProcessId": "luxewear:NDR"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "urbanthread:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "urbanthread:ACC"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "stylenest:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "modecraft:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "modecraft:ACC"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "trendlane:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "trendlane:NDR"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "chickart:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "chickart:RET"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "voguenest:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "voguenest:ACC"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:CS"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:ACC"
+    },
+    {
+      "employeeId": "dev-patel",
+      "brandProcessId": "luxewear:NDR"
+    },
+    {
+      "employeeId": "aditya-rao",
+      "brandProcessId": "fitfuel:CS"
+    },
+    {
+      "employeeId": "aditya-rao",
+      "brandProcessId": "fitfuel:ACC"
+    },
+    {
+      "employeeId": "pooja-menon",
+      "brandProcessId": "vitacore:CS"
+    },
+    {
+      "employeeId": "pooja-menon",
+      "brandProcessId": "vitacore:NDR"
+    },
+    {
+      "employeeId": "kiran-bhat",
+      "brandProcessId": "nutrinest:CS"
+    },
+    {
+      "employeeId": "kiran-bhat",
+      "brandProcessId": "nutrinest:RET"
+    },
+    {
+      "employeeId": "leela-nambiar",
+      "brandProcessId": "wellspring:CS"
+    },
+    {
+      "employeeId": "leela-nambiar",
+      "brandProcessId": "wellspring:ACC"
+    },
+    {
+      "employeeId": "nikhil-verma",
+      "brandProcessId": "activelife:CS"
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:CS"
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:ACC"
+    },
+    {
+      "employeeId": "varun-nair",
+      "brandProcessId": "activelife:NDR"
+    },
+    {
+      "employeeId": "nikhil-verma",
+      "brandProcessId": "activelife:ACC"
+    },
+    {
+      "employeeId": "riya-sharma",
+      "brandProcessId": "activelife:NDR"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "fitfuel:CS"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "fitfuel:ACC"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "vitacore:CS"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "vitacore:NDR"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "nutrinest:CS"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "nutrinest:RET"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "wellspring:CS"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "wellspring:ACC"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:CS"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:ACC"
+    },
+    {
+      "employeeId": "tara-bhatt",
+      "brandProcessId": "activelife:NDR"
+    },
+    {
+      "employeeId": "sanjay-gupta",
+      "brandProcessId": "casabloom:CS"
+    },
+    {
+      "employeeId": "sanjay-gupta",
+      "brandProcessId": "casabloom:ACC"
+    },
+    {
+      "employeeId": "anita-desai",
+      "brandProcessId": "homeease:CS"
+    },
+    {
+      "employeeId": "anita-desai",
+      "brandProcessId": "homeease:NDR"
+    },
+    {
+      "employeeId": "manoj-kumar",
+      "brandProcessId": "dailynest:CS"
+    },
+    {
+      "employeeId": "manoj-kumar",
+      "brandProcessId": "dailynest:RET"
+    },
+    {
+      "employeeId": "geeta-rao",
+      "brandProcessId": "ecoliving:CS"
+    },
+    {
+      "employeeId": "geeta-rao",
+      "brandProcessId": "ecoliving:ACC"
+    },
+    {
+      "employeeId": "farhan-sheikh",
+      "brandProcessId": "kitchenkart:CS"
+    },
+    {
+      "employeeId": "farhan-sheikh",
+      "brandProcessId": "kitchenkart:ACC"
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:CS"
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:ACC"
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:NDR"
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:CS"
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "primeliving:ACC"
+    },
+    {
+      "employeeId": "neha-patil",
+      "brandProcessId": "primeliving:NDR"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "casabloom:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "casabloom:ACC"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "homeease:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "homeease:NDR"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "dailynest:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "dailynest:RET"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "ecoliving:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "ecoliving:ACC"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "kitchenkart:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "kitchenkart:ACC"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:CS"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:ACC"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "brandProcessId": "primeliving:NDR"
+    },
+    {
+      "employeeId": "amit-joshi",
+      "brandProcessId": "kitchenkart:CS"
+    },
+    {
+      "employeeId": "varun-nair",
+      "brandProcessId": "fitfuel:CS"
+    }
+  ],
+  "holidays": [
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day"
+    }
+  ],
+  "leaves": [
+    {
+      "employeeId": "kavya-reddy",
+      "startDate": "2026-12-10",
+      "endDate": "2026-12-11",
+      "type": "planned_leave",
+      "status": "approved"
+    },
+    {
+      "employeeId": "ishaan-verma",
+      "startDate": "2026-12-30",
+      "endDate": "2026-12-30",
+      "type": "comp_off_taken",
+      "status": "approved",
+      "earnedOn": "2026-12-25"
+    }
+  ],
+  "previousContext": {
+    "direction": "previous",
+    "days": [
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aarav-mehta",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "priya-nair",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kavya-reddy",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rohan-patil",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sneha-kulkarni",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "vikram-shah",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ananya-iyer",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "ishaan-verma",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "meera-joshi",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "arjun-malhotra",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "divya-pillai",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kabir-singh",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "naina-kapoor",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rahul-deshmukh",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sara-khan",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "dev-patel",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "aditya-rao",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "pooja-menon",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "kiran-bhat",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "leela-nambiar",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "nikhil-verma",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "riya-sharma",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "varun-nair",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "tara-bhatt",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "sanjay-gupta",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "anita-desai",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "manoj-kumar",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "geeta-rao",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "farhan-sheikh",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "neha-patil",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "amit-joshi",
+        "date": "2026-11-30",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-25",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-26",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-27",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-28",
+        "status": "WORK"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-29",
+        "status": "WEEKLY_OFF"
+      },
+      {
+        "rosterId": "context-2026-11",
+        "employeeId": "rashmi-iyer",
+        "date": "2026-11-30",
+        "status": "WORK"
+      }
+    ]
+  },
+  "nextContext": null
+}

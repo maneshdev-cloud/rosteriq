@@ -1,0 +1,32 @@
+{
+  "name": "stress-ecoliving-2026-12-14",
+  "description": "EcoLiving CS (ALL_365) on Monday 2026-12-14: sole assignee Geeta Rao on approved leave AND designated backup Rashmi Iyer on approved leave. No other employee is eligible. The gap is unfixable within this scenario and publish must stay blocked.",
+  "addLeaves": [
+    {
+      "employeeId": "geeta-rao",
+      "startDate": "2026-12-14",
+      "endDate": "2026-12-14",
+      "type": "planned_leave",
+      "status": "approved"
+    },
+    {
+      "employeeId": "rashmi-iyer",
+      "startDate": "2026-12-14",
+      "endDate": "2026-12-14",
+      "type": "planned_leave",
+      "status": "approved"
+    }
+  ],
+  "expectedIssue": {
+    "code": "COVERAGE_SHORTFALL",
+    "severity": "mandatory",
+    "claimKind": "gap",
+    "date": "2026-12-14",
+    "brandId": "ecoliving",
+    "processCode": "CS",
+    "required": 1,
+    "actual": 0,
+    "message": "14 Dec 2026, EcoLiving, Customer Support: required 1, actual 0. Sole assignee Geeta Rao is on approved leave and designated backup Rashmi Iyer is also on approved leave. No other eligible employee is available. 1 staffing position uncovered."
+  },
+  "expectedPublish": "blocked"
+}
